@@ -7,3 +7,4 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push nijadev69/sample-application-http-api-server
   - docker push nijadev69/sample-application-db-changelog-job
+
