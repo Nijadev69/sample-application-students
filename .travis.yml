@@ -4,12 +4,11 @@ jobs:
   include:
     - stage: test
       script: mvn clean verify
-    - stage: build
-      script:
-        - ls target/
-        #- docker build -t nijadev69/sample-application-http-api-server:1.0 ./sample-application-http-api-server/
-        #- docker build -t nijadev69/sample-application-db-changelog-job:1.0 ./sample-application-db-changelog-job/
-        #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        #- docker push nijadev69/sample-application-http-api-server
-        #- docker push nijadev69/sample-application-db-changelog-job
+    #- stage: build
+      script: 
+        - docker build -t nijadev69/sample-application-http-api-server:1.0 ./sample-application-http-api-server/
+        - docker build -t nijadev69/sample-application-db-changelog-job:1.0 ./sample-application-db-changelog-job/
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker push nijadev69/sample-application-http-api-server
+        - docker push nijadev69/sample-application-db-changelog-job
 
